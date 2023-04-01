@@ -2,7 +2,7 @@
 
 Rip-off of [rip-off of skyzh's CV](https://github.com/matchy233/chi-cv-template), using [Typst](https://typst.app/).
 
-Like everyone else I'm new to Typst :) PRs and suggestions are welcome.
+Like everyone else I'm new to Typst :) This template mainly serves as a "learning" repo for me to get familiar with `typst` functionalities. PRs and suggestions are welcome.
 
 ⚠️ The implementation of `fontawesome.typ` is far from perfect and **may** conflict with existing `typst` built-in commands! Please report any issues you find.
 
@@ -23,3 +23,9 @@ git clone https://github.com/matchy233/typst-chi-cv-template.git
 cd typst-chi-cv-template
 typst --font-path ./fonts resume.typ resume.pdf
 ```
+
+## Sample Output
+
+![Sample output of Chi-CV template](./img/chi-cv-preview.png)
+
+[PDF file](resume.pdf)
