@@ -21,7 +21,7 @@ Assume that you have installed `typst` cli already and it's in your `$PATH`.
 ```bash
 git clone https://github.com/matchy233/typst-chi-cv-template.git
 cd typst-chi-cv-template
-typst --font-path ./fonts resume.typ resume.pdf
+typst --font-path ./fonts compile resume.typ resume.pdf
 ```
 
 ## Sample Output
