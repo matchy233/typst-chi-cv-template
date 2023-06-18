@@ -99,4 +99,19 @@
   - *#iconlink(icon: github, text: "type-exercise-in-rust", "https://github.com/skyzh/mini-lsm")* (#fa[#star]1k) Learn Rust generics by implementing a vectorized expression evaluation framework
 ]
 
-#align(right, text(fill: gray)[Last Updated on Mar 30, 2023])
+
+#let months = (
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+
+#let day = datetime.today().day()
+#let month = months.at(datetime.today().month())
+#let year = datetime.today().year()
+
+#align(
+  right, 
+  text(fill: gray)[
+    Last Updated on #month #day, #year
+    ]
+  )
