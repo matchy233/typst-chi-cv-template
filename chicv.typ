@@ -8,7 +8,11 @@
 
 #let iconlink(
   uri, text: "", icon: link-icon) = {
-  link(uri)[#fa[#icon] #text]
+  if text != "" {
+    link(uri)[#fa[#icon] #text]
+  } else {
+    link(uri)[#fa[#icon]]
+  }
 }
 
 #let cventry(
