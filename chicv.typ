@@ -66,3 +66,13 @@
 
   body
 }
+
+#let today() = {
+  let month = (
+    "January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December",
+  ).at(datetime.today().month() - 1);
+  let day = datetime.today().day();
+  let year = datetime.today().year();
+  [#month #day, #year]
+}

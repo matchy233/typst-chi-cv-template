@@ -99,4 +99,4 @@
   - *#iconlink(icon: github, text: "type-exercise-in-rust", "https://github.com/skyzh/mini-lsm")* (#fa[#star]1k) Learn Rust generics by implementing a vectorized expression evaluation framework
 ]
 
-#align(right, text(fill: gray)[Last Updated on Mar 30, 2023])
+#align(right, text(fill: gray)[Last Updated on #today()])
