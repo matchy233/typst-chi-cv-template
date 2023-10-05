@@ -69,7 +69,7 @@
 == Open-Source Contributions
 
 #cventry(
-  tl: "cmu-db/busttub" + " " + iconlink("https://github.com/cmu-db/bustub", icon: github),
+  tl: [*cmu-db/busttub* #iconlink("https://github.com/cmu-db/bustub", icon: github)],
   tr: "2022/08 - Now"
 )[
   - Lead the development of the BusTub database system. Added SQL support/query processing layer to the system.
@@ -78,14 +78,14 @@
 ]
 
 #cventry(
-  tl: "RisingLight Community" + " " + iconlink("https://github.com/risinglightdb", icon: github),
+  tl: [*RisingLight Community* #iconlink("https://github.com/risinglightdb", icon: github)],
   tr: "2022/01 - Now",
 )[
   - Lead the development of *RisingLight*, an OLAP database system for educational purpose.
 ]
 
 #cventry(
-  tl: "TiKV Community" + " " + iconlink("https://github.com/tikv", icon: github),
+  tl: [*TiKV Community* #iconlink("https://github.com/tikv", icon: github)],
   tr: "2020/05 - Now"
 )[
   - Maintains *TiKV Coprocessor*, the push-down execution framework of TiDB. Mentored community members to contribute features (e.g. new data types, plugin system) in the *LFX Mentorship*. #iconlink("https://github.com/tikv/tikv/issues/9066")  #iconlink("https://github.com/tikv/tikv/issues/9747")
