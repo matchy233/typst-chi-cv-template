@@ -4,7 +4,7 @@
 
 = Chi Zhang
 
-#fa[#envelope] skyzh\@cmu.edu |
+#fa[#envelope] #link("mailto:skyzh@cmu.edu")[skyzh\@cmu.edu] |
 #fa[#github] #link("https://github.com/skyzh")[github.com/skyzh] |
 #fa[#globe] #link("https://skyzh.dev")[skyzh.dev] |
 #fa[#linkedin] #link("https://www.linkedin.com/in/alex-chi-skyzh/")[alex-chi-skyzh]
