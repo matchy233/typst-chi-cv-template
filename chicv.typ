@@ -22,15 +22,15 @@
   br: "",
   content
 ) = {
-  block(
+  pad(left: 10pt, right: 5pt, block(
     inset: (left: 0pt),
-    strong(tl) + h(1fr) + tr +
+    if type(tl) == str { strong(tl) } else { tl } + h(1fr) + tr +
     linebreak() +
     if bl != "" or br != "" {
       bl + h(1fr) + br + linebreak()
     } +
     content
-  )
+  ))
 }
 
 #let chicv(body) = {
