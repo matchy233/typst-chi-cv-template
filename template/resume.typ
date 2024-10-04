@@ -1,43 +1,74 @@
-#import "chicv.typ": *
+#import "/src/chicv.typ": *
 
-#show: chicv
+#show: chicv.with(
+  margin: (x: 0.9cm, y: 1.3cm),
+  par-padding: (left: 0pt, right: 0pt),
+)
 
 = Chi Zhang
 
-#fa[#envelope] skyzh\@cmu.edu |
-#fa[#github] #link("https://github.com/skyzh")[github.com/skyzh] |
-#fa[#globe] #link("https://skyzh.dev")[skyzh.dev] |
-#fa[#linkedin] #link("https://www.linkedin.com/in/alex-chi-skyzh/")[alex-chi-skyzh]
+#personal-info(
+  email: "iskyzh@gmail.com",
+  github: "https://github.com/skyzh",
+  website: "https://skyzh.dev",
+  linkedin: "https://www.linkedin.com/in/alex-chi-skyzh/",
+  x-twitter: "https://twitter.com/iskyzh",
+  (link: "https://typst.app/", text: "Typst", icon: "t", solid: true),
+)
 
 == Education
 #cventry(
   tl: "Carnegie Mellon University",
-  tr:  "2022/08 - 2023/12 (Expected)",
-  bl: "Master of Science in Computer Science, GPA 4.09/4.33",
+  tr: dates(from: "2022/08", to: "2023/12"),
+  bl: "Master of Science in Computer Science, GPA 4.10/4.33",
   br: "Pittsburgh, PA, USA"
 )[
-  - Teaching Assistant for 15-445/645 Database Systems (Fall 2022, Spring 2023)
+  - Teaching Assistant for 15-445/645 Database Systems (Fall 2022, Spring 2023, Fall 2023)
+  - Courses: Distributed Systems, Compiler Design, Advanced Database Systems, Deep Learning Systems, etc.
 ]
+
 #cventry(
-  tl: "Shanghai Jiao Tong University",
-  tr: "2018/09 - 2022/06",
+  tl: "Shanghai Jiao Tong University", // by default, #cventry will bold top-left text
+  tr: dates(from: "2018/09", to: "2022/06"),
   bl: "B. Eng in Computer Science and Technology",
   br: "Shangehai, China"
 )[
   - GPA 93.80/100, Rank 1/149, National Scholarship 2019 (Top 0.2% national-wide)
   - A+ Courses: Operating Systems, Computer Architecture, Computer Networks, and 28 others
 ]
+
 == Work Experience
+
 #cventry(
-  tl: "RisingWave Labs",
-  tr: "2021/08 - 2022/07",
-  bl: "Database System R&D Intern",
-  br: "Shanghai, China"
+  // you can override the default bold style by passing content blocks
+  tl: [#link("https://neon.tech")[*Neon*]],
+  tr: dates(from: "2024/02"),
+  bl: [Systems Software Engineer],
+  br: [Remote / Pittsburgh, PA, USA],
+  padding: (bottom: -5pt)
+)[]
+
+#cventry(
+  tl: [_... and also_],
+  tr: dates(from: "2023/05", to: "2023/08"),
+  bl: [Software Engineer Intern],
+  br: [Remote / Pittsburgh, PA, USA],
+)[
+  - Neon is a fully-managed PostgreSQL service built on a key-value storage engine with point-to-time recovery support.
+  - *Compaction Strategy Enhancement*. Conducted an in-depth analysis and evaluation of the storage engine to assess performance metrics and storage space efficiency. Implemented the RocksDB-style tiered compaction and improved page reconstruction strategy, which reduced space amplification by 2x and enhanced read-update performance by 20%.
+ - *Improved User Adoption on the Edge*. Enhanced the overall reliability of the Neon serverless driver and the control plane proxy. Collaborated closely with the Prisma ORM team to integrate the serverless driver into Prisma and ensured compatibility with Vercel Edge Runtime by transitioning the Rust Prisma engine codebase to be WebAssembly-ready.
+]
+
+#cventry(
+  tl: [*RisingWave Labs*],
+  tr: dates(from: "2021/08", to: "2022/07"),
+  bl: [Database System R&D Intern],
+  br: [Shanghai, China]
 )[
   - *Top contributor of #iconlink(
     "https://github.com/risingwavelabs/risingwave",
     text: "RisingWave",
-    icon: github)* _as of 2023/03_. RisingWave is a database system with PostgreSQL-compatible interface that incrementally maintains materialized views. Worked on the development of almost all components related to stream computing and state store.
+    icon: [github])* _as of 2023/03_. RisingWave is a database system with PostgreSQL-compatible interface that incrementally maintains materialized views. Worked on the development of almost all components related to stream computing and state store.
   - *Streaming Index Joins*: Designed shared state and streaming index in RisingWave; implemented index lookup join executor; implemented delta join DAG optimizer transformations; implemented distributed delta join scheduler
   - *Performance Improvement*: Conducted intensive benchmarks and analyzed performance issues. Fixed bugs, proposed strategies, and led cross-team collaboration which improved the system throughput by 10x in a 3-month period
   - *Developer Experience*. Initiated the RiseDev development tool to start a RisingWave cluster with one command, which is deeply integrated into the development workflow across unit testing, integration testing, and benchmarking. Built RisingWave Streaming Dashboard that shows cluster metrics and visualizes streaming query plans in one place
@@ -50,7 +81,7 @@
   bl: "Storage System R&D Intern, TerarkDB Team",
   br: "Beijing, China"
 )[
-  - *Co-Optimized #iconlink(text: "TerarkDB", icon: github, "https://github.com/bytedance/terarkdb")* and *#iconlink(text: "ZenFS", icon: github, "https://github.com/westerndigitalcorporation/zenfs")*. Implemented Zone-aware Garbage Collection in TerarkDB and WAL-Aware Zone Allocator in ZenFS, which reduced 3-4x of space amplification and improved the p999 tail latency by 100x
+  - *Co-Optimized #githublink(text: "TerarkDB", "https://github.com/bytedance/terarkdb")* and *#iconlink(text: "ZenFS", icon: [github], "https://github.com/westerndigitalcorporation/zenfs")*. Implemented Zone-aware Garbage Collection in TerarkDB and WAL-Aware Zone Allocator in ZenFS, which reduced 3-4x of space amplification and improved the p99999999999999999999999 tail latency by 100x
   /*
   - Implemented *Zone-Aware Garbage Collection* in *TerrakDB* for Zoned Namespace SSDs, which reduced 3-4x of space amplification caused by interleaving write lifetime in a single ZNS zone. #iconlink("https://github.com/bytedance/terarkdb", icon: github)
   - Added observability facilities to *ZenFS* (by Western Digital) to analyze bottlenecks and implemented a *WAL-Aware Zone Allocator*, which reduced the p999 tail latency by 100x. #iconlink("https://github.com/bzbd/zenfs", icon: github)
@@ -63,13 +94,15 @@
   bl: "Storage System R&D Intern",
   br: "Shanghai, China"
 )[
-  - Built LSM-based storage engine *#iconlink("https://github.com/tikv/agatedb", icon: github, text: "AgateDB")* from ground-up. Inspired by WiscKey and BadgerDB, AgateDB separates large vallues from LSM tree into value log, so as to reduce write amplification.
+  - Built LSM-based storage engine *#iconlink("https://github.com/tikv/agatedb", icon: [github], text: "AgateDB")* from ground-up. Inspired by WiscKey and BadgerDB, AgateDB separates large vallues from LSM tree into value log, so as to reduce write amplification.
 ]
 
 == Open-Source Contributions
 
 #cventry(
-  tl: "cmu-db/busttub" + " " + iconlink("https://github.com/cmu-db/bustub", icon: github),
+  tl: [
+    *cmu-db/busttub* #githublink("https://github.com/cmu-db/bustub")
+  ],
   tr: "2022/08 - Now"
 )[
   - Lead the development of the BusTub database system. Added SQL support/query processing layer to the system.
@@ -78,14 +111,18 @@
 ]
 
 #cventry(
-  tl: "RisingLight Community" + " " + iconlink("https://github.com/risinglightdb", icon: github),
+  tl: [
+    *RisingLight Community* #githublink("https://github.com/risinglightdb")
+  ],
   tr: "2022/01 - Now",
 )[
   - Lead the development of *RisingLight*, an OLAP database system for educational purpose.
 ]
 
 #cventry(
-  tl: "TiKV Community" + " " + iconlink("https://github.com/tikv", icon: github),
+  tl: [
+    *TiKV Community* #githublink("https://github.com/tikv")
+  ],
   tr: "2020/05 - Now"
 )[
   - Maintains *TiKV Coprocessor*, the push-down execution framework of TiDB. Mentored community members to contribute features (e.g. new data types, plugin system) in the *LFX Mentorship*. #iconlink("https://github.com/tikv/tikv/issues/9066")  #iconlink("https://github.com/tikv/tikv/issues/9747")
@@ -93,10 +130,10 @@
 
 #cventry(
   tl: "Personal Projects",
-  tr: "5.3k followers " + iconlink(text: "skyzh", icon: github, "https://github.com/skyzh")
+  tr: "5.3k followers " + iconlink(text: "skyzh", icon: [github], "https://github.com/skyzh")
 )[
-  - *#iconlink(icon: github, text: "mini-lsm", "https://github.com/skyzh/mini-lsm")* (#fa[#star]1k) Build a simple LSM-Tree storage system in Rust in a week
-  - *#iconlink(icon: github, text: "type-exercise-in-rust", "https://github.com/skyzh/mini-lsm")* (#fa[#star]1k) Learn Rust generics by implementing a vectorized expression evaluation framework
+  - *#iconlink(icon: [github], text: "mini-lsm", "https://github.com/skyzh/mini-lsm")* (#fa-icon("star", solid: true)1k) Build a simple LSM-Tree storage system in Rust in a week
+  - *#iconlink(icon: [github], text: "type-exercise-in-rust", "https://github.com/skyzh/mini-lsm")* (#fa-icon("star", solid: true)1k) Learn Rust generics by implementing a vectorized expression evaluation framework
 ]
 
-#align(right, text(fill: gray)[Last Updated on Mar 30, 2023])
+#align(right, text(fill: gray)[Last Updated on #today])
