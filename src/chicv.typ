@@ -79,10 +79,10 @@
 
 
 #let personal-info(
-  email: "fake@example.com",
+  email: "",
   phone: "",
-  github: "https://github.com/typst",
-  website: "https://typst.dev",
+  github: "",
+  website: "",
   linkedin: "",
   ..misc
 ) = {
