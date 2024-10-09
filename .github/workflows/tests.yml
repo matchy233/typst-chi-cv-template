@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ main ]
 
+# set envrionment variables for typst font path
+env:
+  TYPST_FONT_PATHS: ${{ github.workspace }}/fonts
+
 jobs:
   tests:
     strategy:
@@ -42,8 +46,7 @@ jobs:
         with:
           crate: typst-test
           git: https://github.com/tingerrr/typst-test.git
-          branch: main
-          # tag: ci-semi-stable # note: --font-path is not supported in ci-semi-stable yet
+          tag: ci-semi-stable # note: --font-path is not supported in ci-semi-stable yet
 
       - name: Setup typst
         id: setup-typst
