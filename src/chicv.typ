@@ -168,7 +168,7 @@
 }
 
 #let chicv(
-  margin: (0.9cm, 1.3cm),
+  margin: (x: 0.9cm, y: 1.3cm),
   par-padding: cventry-padding,
   body
 ) = {
