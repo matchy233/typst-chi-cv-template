@@ -12,11 +12,11 @@ doc:
 
 # run test suite
 test *args:
-	typst-test run {{ args }}
+	typst-test run --font-path "./fonts" {{ args }}
 
 # update test cases
 update *args:
-	typst-test update {{ args }}
+	typst-test update --font-path "./fonts" {{ args }}
 
 # package the library into the specified destination folder
 package target:
