@@ -1,5 +1,6 @@
 #import "@preview/fontawesome:0.4.0": *
 
+// defaults
 #let cventry-padding = (
   top: 0pt,
   bottom: 0pt,
@@ -8,9 +9,8 @@
 )
 
 #let to-string(input) = {
-  if type(input) == "string" {
-    input
-  } else if type(input) == "content" {
+  // TODO: content handling is still not perfect
+  if type(input) == "content" {
     if input.has("text") {
       input.text
     } else if input.has("children") {
@@ -23,6 +23,18 @@
       // fallback, I don't know how to handle this input
       input
     }
+  } else if type(input) == "boolean" {
+    if input { "true" } else { "false" }
+  } else if type(input) == "array" {
+    "[" + input.map(to-string).join(", ") + "]"
+  } else if type(input) == "dictionary" {
+    let output = "{ ";
+    for tuple in input {
+      output += tuple.at(0) + ": " + to-string(tuple.at(1)) + ", ";
+    }
+    output + " }"
+  } else {
+    str(input)
   }
 }
 
@@ -112,14 +124,22 @@
         .filter(it => it != "")
         .join(" | ");
 
+  let is-empty = type(display) == "none";
+
   let kv = misc.named()
   for item in kv {
     let key = item.at(0);
     let value = item.at(1);
-    display += " | " + iconlink(value, text: short-uri(value), icon: key);
+    if not is-empty {
+      display += " | ";
+    }
+    display += iconlink(value, text: short-uri(value), icon: key);
+    if is-empty {
+      is-empty = false;
+    }
   }
 
-  let tuples = misc.pos()
+  let tuples = misc.pos();
   for t in tuples {
     if type(t) == "dictionary" {
       let link = if "link" in t {
@@ -134,7 +154,13 @@
       let solid = if "solid" in t {
         t.at("solid")
       } else { false };
-      display += " | " + iconlink(link, text: text, icon: icon, solid: solid);
+      if not is-empty {
+        display += " | ";
+      }
+      display += iconlink(link, text: text, icon: icon, solid: solid);
+      if is-empty {
+        is-empty = false;
+      }
     }
   }
   display
@@ -143,18 +169,12 @@
 
 #let cventry(
   tl: lorem(2),
-  tr: "2333/23 - 2333/23",
+  tr: dates(from: "2020-01-01"),
   bl: "",
   br: "",
   padding: (:),
   content
 ) = {
-  // if padding has value for override, use it
-  // for key in ("top", "bottom", "left", "right") {
-  //   if not key in padding.keys() {
-  //     padding.insert(key, cventry-padding.at(key));
-  //   }
-  // }
   pad(..padding, block(
     inset: (left: 0pt),
     [
@@ -168,7 +188,7 @@
 }
 
 #let chicv(
-  margin: (0.9cm, 1.3cm),
+  margin: (x: 0.9cm, y: 1.3cm),
   par-padding: cventry-padding,
   body
 ) = {
