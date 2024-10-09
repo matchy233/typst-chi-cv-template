@@ -48,6 +48,7 @@ jobs:
 
       - name: Build package
         run: |
+          chmod +x scripts/*
           just doc
           just package out
 

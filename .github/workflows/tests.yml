@@ -42,7 +42,8 @@ jobs:
         with:
           crate: typst-test
           git: https://github.com/tingerrr/typst-test.git
-          tag: ci-semi-stable
+          branch: main
+          # tag: ci-semi-stable # note: --font-path is not supported in ci-semi-stable yet
 
       - name: Setup typst
         id: setup-typst
