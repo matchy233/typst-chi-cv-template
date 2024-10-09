@@ -147,7 +147,7 @@
   bl: "",
   br: "",
   padding: (:),
-  par
+  content
 ) = {
   // if padding has value for override, use it
   // for key in ("top", "bottom", "left", "right") {
@@ -162,7 +162,7 @@
       #if bl != "" or br != "" {
         bl + h(1fr) + br + linebreak()
       }
-      #par
+      #content
     ]
   ))
 }
@@ -172,7 +172,7 @@
   par-padding: cventry-padding,
   body
 ) = {
-  set par(justify: true)
+  set par(justify: true, leading: 0.7em)
 
   show heading.where(
     level: 1
@@ -188,7 +188,7 @@
   show heading.where(
     level: 2
   ): it => text(
-    size: 12pt,
+    size: 14pt,
     font: (
       "Avenir Next LT Pro",
       "Manrope",
@@ -210,7 +210,15 @@
   show link: it => underline(offset: 2pt, it)
 
   set page(
-   margin: margin,
+    margin: margin,
+    footer: context [
+      #if counter(page).get() != counter(page).final() {
+        align(center, text(fill: gray)[ … continues on the next page …])
+      } else {
+        // show nothing!
+      }
+    ],
+    footer-descent: 10%,
   )
 
   body
