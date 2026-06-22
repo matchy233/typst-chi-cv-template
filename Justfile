@@ -11,12 +11,12 @@ doc:
 	typst compile docs/manual.typ docs/manual.pdf
 
 # run test suite
-test *args:
-	typst-test run {{ args }}
+test *args: install
+	tt run {{ args }} --use-system-fonts --no-fail-fast --warnings promote
 
 # update test cases
 update *args:
-	typst-test update {{ args }}
+	tt update {{ args }} --use-system-fonts
 
 # package the library into the specified destination folder
 package target:

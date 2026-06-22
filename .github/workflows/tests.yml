@@ -37,12 +37,16 @@ jobs:
         with:
           crate: just
 
-      - name: Install typst-test from github
-        uses: baptiste0928/cargo-install@v3
+      - name: Install tytanic
+        uses: taiki-e/cache-cargo-install-action@v2
         with:
-          crate: typst-test
-          git: https://github.com/tingerrr/typst-test.git
-          tag: ci-semi-stable
+          tool: tytanic@0.3.3
+
+      - name: Install fonts
+        run: |
+          mkdir -p ~/.local/share/fonts/chicv-ripoff
+          cp fonts/*.otf ~/.local/share/fonts/chicv-ripoff/
+          fc-cache -f
 
       - name: Setup typst
         id: setup-typst

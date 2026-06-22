@@ -64,6 +64,13 @@ just install-preview
 typst compile --font-path ./fonts ./template/resume.typ resume.pdf
 ```
 
+The test suite uses [`tytanic`](https://github.com/tingerrr/tytanic):
+
+```bash
+just test
+just update
+```
+
 ## Usage
 
 ```typst
