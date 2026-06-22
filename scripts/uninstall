@@ -14,8 +14,8 @@ if (( $# < 1 )) || [[ "${1:-}" == "help" ]]; then
   echo "directory will be used so that the package gets installed for local use."
   echo "The name and version are read from 'typst.toml' in the project root."
   echo ""
-  echo "Local package prefix: $DATA_DIR/typst/package/local"
-  echo "Local preview package prefix: $DATA_DIR/typst/package/preview"
+  echo "Local package prefix: $DATA_DIR/typst/packages/local"
+  echo "Local preview package prefix: $DATA_DIR/typst/packages/preview"
   exit 1
 fi
 
