@@ -10,6 +10,7 @@
 .github
 scripts
 tests
+worklogs
 Justfile
 docs/*.typ
 assets/images/resume.pdf
