@@ -8,16 +8,17 @@ description = "Minimal, customizable CVs with compact entries."
 repository = "https://github.com/matchy233/typst-chi-cv-template"
 keywords = ["cv", "resume", "curriculum-vitae"]
 categories = ["cv"]
-compiler = "0.15.0"
+compiler = "0.14.2"
 exclude = [
   "/.github",
   "/scripts",
   "/tests",
   "/worklogs",
   "/Justfile",
-  "/docs/*.typ",
+  "/docs",
   "/assets/images/resume.pdf",
   "/assets/images/resume-*.png",
+  "/fonts",
 ]
 
 [template]

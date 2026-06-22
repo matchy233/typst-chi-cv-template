@@ -12,6 +12,7 @@ scripts
 tests
 worklogs
 Justfile
-docs/*.typ
+docs
 assets/images/resume.pdf
 assets/images/resume-*.png
+fonts

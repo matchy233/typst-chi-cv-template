@@ -19,11 +19,11 @@ PRs and suggestions are welcome.
 ## Sample Output
 
 <p align="center">
-  <img src="assets/images/resume-0.png" width="45%" alt="Page 1 of Chi's CV">
-  <img src="assets/images/resume-1.png" width="45%" alt="Page 2 of Chi's CV">
+  <img src="https://raw.githubusercontent.com/matchy233/typst-chi-cv-template/main/assets/images/resume-0.png" width="45%" alt="Page 1 of Chi's CV">
+  <img src="https://raw.githubusercontent.com/matchy233/typst-chi-cv-template/main/assets/images/resume-1.png" width="45%" alt="Page 2 of Chi's CV">
 </p>
 
-[PDF file](assets/images/resume.pdf)
+[PDF file](https://raw.githubusercontent.com/matchy233/typst-chi-cv-template/main/assets/images/resume.pdf)
 
 ## Getting Started
 
@@ -43,9 +43,7 @@ typst compile resume.typ
 
 ### Using Typst web app
 
-Create a new project from `@preview/chicv-ripoff:1.1.3` in the [Typst web app](https://typst.app/).
-
-If the bundled fonts are not available in your project, upload the needed font files from `fonts/`.
+Create a new project from `@preview/chicv-ripoff:1.1.3` in the [Typst web app](https://typst.app/), then upload the required font files (see below).
 
 ### Locally from this repository
 
@@ -64,11 +62,30 @@ just install-preview
 typst compile --font-path ./fonts ./template/resume.typ resume.pdf
 ```
 
-Run the test suite (smoke compilation):
+The test suite uses [`tytanic`](https://github.com/tingerrr/tytanic):
 
 ```bash
 just test
+just update
 ```
+
+## Required Fonts
+
+This template depends on fonts that are **not bundled** with the package (Typst Universe does not allow font files). Install them before compiling:
+
+**Montserrat** (SIL Open Font License) — used for headings and body text.
+Download from [Google Fonts](https://fonts.google.com/specimen/Montserrat).
+
+**Font Awesome 6 Free** (SIL Open Font License) — used for icons.
+The package requires `Font Awesome 6 Free-Solid-900.otf`, `Font Awesome 6 Free-Regular-400.otf`, and `Font Awesome 6 Brands-Regular-400.otf`. Download from [Font Awesome](https://fontawesome.com/download).
+
+Place the `.otf` files in a directory and pass it to `typst compile` with `--font-path`:
+
+```bash
+typst compile --font-path ./my-fonts resume.typ
+```
+
+In the Typst web app, upload them directly to your project.
 
 ## Usage
 
