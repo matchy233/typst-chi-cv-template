@@ -32,7 +32,7 @@ PRs and suggestions are welcome.
 Create a new CV from the template:
 
 ```bash
-typst init @preview/chicv-ripoff:1.1.3
+typst init @preview/chicv-ripoff:1.1.4
 ```
 
 Then compile the generated file:
@@ -43,7 +43,7 @@ typst compile resume.typ
 
 ### Using Typst web app
 
-Create a new project from `@preview/chicv-ripoff:1.1.3` in the [Typst web app](https://typst.app/), then upload the required font files (see below).
+Create a new project from `@preview/chicv-ripoff:1.1.4` in the [Typst web app](https://typst.app/), then upload the required font files (see below).
 
 ### Locally from this repository
 
@@ -90,7 +90,7 @@ In the Typst web app, upload them directly to your project.
 ## Usage
 
 ```typst
-#import "@preview/chicv-ripoff:1.1.3": *
+#import "@preview/chicv-ripoff:1.1.4": *
 
 // Customize the page margin and cventry paragraph padding.
 // It's the same as #set page(...).
