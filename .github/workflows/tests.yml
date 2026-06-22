@@ -24,23 +24,13 @@ jobs:
       - name: Probe runner package cache
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
-          packages: imagemagick cargo
+          packages: cargo
           version: 1.0
-
-      - name: Install oxipng from crates.io
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: oxipng
 
       - name: Install just from crates.io
         uses: baptiste0928/cargo-install@v3
         with:
           crate: just
-
-      - name: Install tytanic
-        uses: taiki-e/cache-cargo-install-action@v2
-        with:
-          tool: tytanic@0.3.3
 
       - name: Install fonts
         run: |
@@ -62,17 +52,6 @@ jobs:
 
       - name: Compile template
         run: typst compile --font-path fonts template/resume.typ /tmp/chicv-ripoff-template.pdf
-
-      - name: Archive diffs
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: typst-${{ steps.setup-typst.outputs.typst-version }}-diffs
-          path: |
-            tests/**/diff/*.png
-            tests/**/out/*.png
-            tests/**/ref/*.png
-          retention-days: 5
 
       - name: Build docs
         if: ${{ matrix.doc }}
