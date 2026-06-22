@@ -1,15 +1,25 @@
 [package]
 name = "chicv-ripoff"
-version = "1.0.0"
-entrypoint = "src/lib.typ"
+version = "1.1.0"
+entrypoint = "lib.typ"
 authors = ["@matchy233"]
 license = "MIT"
-description = "A minimal and fully-customizable CV template."
+description = "Minimal, customizable CVs with compact entries."
 repository = "https://github.com/matchy233/typst-chi-cv-template"
-keywords = ["cv"]
+keywords = ["cv", "resume", "curriculum-vitae"]
 categories = ["cv"]
+compiler = "0.11.0"
+exclude = [
+  "/.github",
+  "/scripts",
+  "/tests",
+  "/Justfile",
+  "/docs/*.typ",
+  "/assets/images/resume.pdf",
+  "/assets/images/resume-*.png",
+]
 
 [template]
 path = "template"
 entrypoint = "resume.typ"
-thumbnail = "resume.png"
+thumbnail = "assets/images/thumbnail.png"

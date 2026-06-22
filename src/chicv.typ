@@ -180,7 +180,7 @@
     size: 22pt,
     font: (
       "Avenir Next LT Pro", // original chi-cv font
-      "Manrope", // a font available in the typst environment and looks similar to Avenir
+      "New Computer Modern",
     ),
     weight: "light",
   )
@@ -191,7 +191,7 @@
     size: 14pt,
     font: (
       "Avenir Next LT Pro",
-      "Manrope",
+      "New Computer Modern",
     ),
     weight: "light",
     block(
