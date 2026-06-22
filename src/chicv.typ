@@ -1,4 +1,4 @@
-#import "@preview/fontawesome:0.4.0": *
+#import "@preview/fontawesome:0.6.1": *
 
 #let cventry-padding = (
   top: 0pt,
@@ -172,6 +172,8 @@
   par-padding: cventry-padding,
   body
 ) = {
+  fa-version("6")
+
   set par(justify: true, leading: 0.7em)
 
   show heading.where(
