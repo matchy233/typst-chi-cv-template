@@ -1,4 +1,4 @@
-#import "@local/chicv-ripoff:1.1.2": *
+#import "@local/chicv-ripoff:1.1.3": *
 
 #show: chicv.with(
   margin: (x: 1cm, y: 1.5cm),
