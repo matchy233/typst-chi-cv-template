@@ -181,7 +181,7 @@
   ): set text(
     size: 22pt,
     font: (
-      "Avenir Next LT Pro", // original chi-cv font
+      "Montserrat",
       "New Computer Modern",
     ),
     weight: "light",
@@ -192,7 +192,7 @@
   ): it => text(
     size: 14pt,
     font: (
-      "Avenir Next LT Pro",
+      "Montserrat",
       "New Computer Modern",
     ),
     weight: "light",

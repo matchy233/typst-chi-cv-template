@@ -32,7 +32,7 @@ PRs and suggestions are welcome.
 Create a new CV from the template:
 
 ```bash
-typst init @preview/chicv-ripoff:1.1.0
+typst init @preview/chicv-ripoff:1.1.2
 ```
 
 Then compile the generated file:
@@ -43,7 +43,7 @@ typst compile resume.typ
 
 ### Using Typst web app
 
-Create a new project from `@preview/chicv-ripoff:1.1.0` in the [Typst web app](https://typst.app/).
+Create a new project from `@preview/chicv-ripoff:1.1.2` in the [Typst web app](https://typst.app/).
 
 If the bundled fonts are not available in your project, upload the needed font files from `fonts/`.
 
@@ -64,17 +64,16 @@ just install-preview
 typst compile --font-path ./fonts ./template/resume.typ resume.pdf
 ```
 
-The test suite uses [`tytanic`](https://github.com/tingerrr/tytanic):
+Run the test suite (smoke compilation):
 
 ```bash
 just test
-just update
 ```
 
 ## Usage
 
 ```typst
-#import "@preview/chicv-ripoff:1.1.0": *
+#import "@preview/chicv-ripoff:1.1.2": *
 
 // Customize the page margin and cventry paragraph padding.
 // It's the same as #set page(...).
