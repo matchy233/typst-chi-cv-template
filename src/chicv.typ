@@ -8,9 +8,9 @@
 )
 
 #let to-string(input) = {
-  if type(input) == "string" {
+  if type(input) == str {
     input
-  } else if type(input) == "content" {
+  } else if type(input) == content {
     if input.has("text") {
       input.text
     } else if input.has("children") {
@@ -121,7 +121,7 @@
 
   let tuples = misc.pos()
   for t in tuples {
-    if type(t) == "dictionary" {
+    if type(t) == dictionary {
       let link = if "link" in t {
         t.at("link")
       } else { "" };
