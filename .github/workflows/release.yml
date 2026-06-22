@@ -49,6 +49,8 @@ jobs:
       - name: Build package
         run: |
           just doc
+          just install-preview
+          typst compile --font-path fonts template/resume.typ /tmp/chicv-ripoff-template.pdf
           just package out
 
       - name: Checkout package registry

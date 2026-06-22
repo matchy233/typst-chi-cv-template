@@ -10,11 +10,11 @@ jobs:
     strategy:
       matrix:
         # add any other Typst versions that your package should support
-        typst-version: ["0.11"]
+        typst-version: ["0.15.0"]
         # the docs don't need to build with all versions supported by the package;
         # the latest one is enough
         include:
-          - typst-version: "0.11"
+          - typst-version: "0.15.0"
             doc: 1
     runs-on: ubuntu-latest
     steps:
@@ -52,6 +52,12 @@ jobs:
 
       - name: Run test suite
         run: just test
+
+      - name: Install preview package
+        run: just install-preview
+
+      - name: Compile template
+        run: typst compile --font-path fonts template/resume.typ /tmp/chicv-ripoff-template.pdf
 
       - name: Archive diffs
         uses: actions/upload-artifact@v4
