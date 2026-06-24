@@ -52,7 +52,7 @@ Assume that you have installed the `typst` CLI and it's in your `$PATH`.
 ```bash
 git clone https://github.com/matchy233/typst-chi-cv-template.git
 cd typst-chi-cv-template
-typst compile --font-path ./fonts ./template/resume.typ resume.pdf
+typst compile --root ./ --font-path ./fonts ./template/resume.typ resume.pdf
 ```
 
 For package-style local testing, install the package into the local preview namespace first:
