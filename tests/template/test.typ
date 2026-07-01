@@ -48,4 +48,4 @@
   padding: (bottom: -5pt),
 )[]
 
-#align(right, text(fill: gray)[Last Updated on #today()])
+#align(right, text(fill: gray)[Last Updated on January 1, 2025])
