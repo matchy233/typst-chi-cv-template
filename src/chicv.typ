@@ -23,6 +23,8 @@
       // fallback, I don't know how to handle this input
       input
     }
+  } else {
+    str(input)
   }
 }
 
